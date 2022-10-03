@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "RG1" {
   location = "East US"
 }
 
-resource "azurerm_resource_group" "RG1" {
+resource "azurerm_resource_group" "RG2" {
   name     = "TEST-RG-AzureDevops"
   location = "East US"
 }
