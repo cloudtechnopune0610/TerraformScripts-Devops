@@ -26,6 +26,6 @@ resource "azurerm_resource_group" "RG1" {
 }
 
 resource "azurerm_resource_group" "RG2" {
-  name     = "TEST-RG-AzureDevops"
+  name     = "DC-IBM-Pune"
   location = "East US"
 }
