@@ -29,3 +29,13 @@ resource "azurerm_resource_group" "RG2" {
   name     = "DC-IBM-Pune"
   location = "East US"
 }
+
+resource "azurerm_resource_group" "RG2" {
+  name     = "DC-Prod"
+  location = "East US"
+}
+
+resource "azurerm_resource_group" "RG2" {
+  name     = "DC-DEV"
+  location = "East US"
+}
