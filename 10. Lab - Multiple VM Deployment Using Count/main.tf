@@ -21,7 +21,7 @@ depends_on = [
 }
 
 resource "azurerm_network_interface" "nic" {
-  count = 2
+  count = var.machinecount
   name                = "${var.prefix}-nic${count.index+1}"
   location            = azurerm_resource_group.rg1.location
   resource_group_name = azurerm_resource_group.rg1.name
