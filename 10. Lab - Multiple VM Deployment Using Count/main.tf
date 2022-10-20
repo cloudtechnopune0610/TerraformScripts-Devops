@@ -86,7 +86,7 @@ resource "azurerm_virtual_machine" "VM" {
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
-    computer_name  = "hostname"
+    computer_name  = "${var.hostname}${count.index}"
     admin_username = "admin100"
     admin_password = "Passw0rd@12345"
   }
