@@ -42,17 +42,21 @@ resource "azurerm_network_security_group" "nsg1" {
   location            = azurerm_resource_group.rg1.location
   resource_group_name = azurerm_resource_group.rg1.name
 
-  security_rule {
-    name                       = "test123"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
+  dynamic "security_rule" {
+    for_each = var.security_rule
+    iterator = rule
+    content {
+    name                       = rule.value.name
+    priority                   = rule.value.priority
+    direction                  = rule.value.direction
+    access                     = rule.value.access
+    protocol                   = rule.value.protocol
+    source_port_range          = rule.value.source_port_range
+    destination_port_range     = rule.value.destination_port_range
+    source_address_prefix      = rule.value.source_address_prefix
+    destination_address_prefix = rule.value.destination_address_prefix
   }
+}
 }
 
 resource "azurerm_network_interface_security_group_association" "association1" {
