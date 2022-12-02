@@ -8,8 +8,8 @@ addressspace1 = [ "10.0.0.0/16" ]
 addresprefix1 = ["10.0.1.0/24"]
 
 # Values need to change as per requirement 
-vm_names      = ["vm1" , "AppServer100"]
-machinetype   = "Standard_B2s"
+vm_names      = ["vm1"]
+machinetype   = "Standard_B1s"
 userid        = "admin100"
 passcode      = "Passw0rd@12345"
 mspublisher   = "MicrosoftWindowsServer"
