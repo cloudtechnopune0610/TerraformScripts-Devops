@@ -67,7 +67,7 @@ resource "azurerm_network_interface_security_group_association" "association" {
 
 resource "azurerm_virtual_machine" "VM" {
   count = var.machinecount
-  name                  = "${var.prefix}-appserver${count.index+1}"
+  name                  = "${var.prefix}${count.index+1}"
   location              = azurerm_resource_group.rg1.location
   resource_group_name   = azurerm_resource_group.rg1.name
   network_interface_ids = [azurerm_network_interface.nic[count.index].id]
