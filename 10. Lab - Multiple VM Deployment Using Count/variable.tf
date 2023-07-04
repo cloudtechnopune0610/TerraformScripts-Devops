@@ -15,7 +15,7 @@ variable "subnetname" {
   type = string
 }
 variable "address1" {
-  type = list(any)
+  type = string
 }
 
 variable "vmtype" {
@@ -24,4 +24,8 @@ variable "vmtype" {
 
 variable "machinecount" {
   type = number 
+}
+
+variable "hostname" {
+  type = string
 }
